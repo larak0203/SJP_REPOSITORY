@@ -333,7 +333,7 @@ include ROOT_PATH . '/templates/layout/header.php';
         <!-- Overview -->
         <section class="card" role="tabpanel" id="p-ov" aria-labelledby="t-ov" tabindex="0">
           <h3>Abstract</h3>
-          <p class="muted mt-3" style="max-width:74ch"><?= nl2br(e($rec['dc_description'] ?: 'No abstract was supplied.')) ?></p>
+          <p class="muted mt-3" style="max-width:74ch<?= !isAdmin() ? '; text-align:justify' : '' ?>"><?= nl2br(e($rec['dc_description'] ?: 'No abstract was supplied.')) ?></p>
 
           <?php if ($keywords): ?>
           <hr class="divider">
